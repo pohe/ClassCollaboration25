@@ -1,0 +1,18 @@
+﻿// See https://aka.ms/new-console-template for more information
+using ClassCollaboration25;
+using System.Net.Http.Headers;
+
+
+Console.WriteLine("Hello, World!");
+
+
+Wheel w1 = new Wheel(100, 2025, "Winther");
+
+Console.WriteLine(w1);
+
+Engine e1 = new Engine(200, "Gasoline");
+
+Console.WriteLine(e1);
+
+
+NavigationSystem navi = new NavigationSystem("Google navigation", "Atai", "GPR", 100);
