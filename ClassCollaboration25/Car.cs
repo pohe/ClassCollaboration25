@@ -40,10 +40,22 @@ namespace ClassCollaboration25
         {
             get { return _theEngine; }
         }
-        public void Start()
+
+        public Car(string modelName, Wheel wheel)
         {
+            _modelName = modelName;
+            _theEngine = new Engine(200, "Gasoline");
+            _theNavigationSystem = new NavigationSystem("Google navi", "Atari", "GPR", 300);
+            _wheel = wheel; 
 
         }
+
+        public void Start()
+        {
+            _theEngine.Start();
+            _theNavigationSystem.Start();
+        }
+
         public void ChangeWheels(Wheel aWheel)
         {
         }
