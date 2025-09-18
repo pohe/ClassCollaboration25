@@ -5,12 +5,18 @@ using System.Net.Http.Headers;
 
 Console.WriteLine("Hello, World!");
 
+Wheel w2 = new Wheel(300, 2023, "Winther");
 
-Wheel w1 = new Wheel(100, 2025, "Winther");
-
+Wheel w1 = null;
+w1 = new Wheel(100, 2025, "Winther");
+w1 = new Wheel(200, 2024, "Summer");
 Car c = new Car("Volvo", w1);
 c.Start();
+c.ChangeWheels(w2);
+Console.WriteLine(c.CalCo2Emission());
 
+
+Console.WriteLine(c.ToString());
 //Console.WriteLine(w1);
 
 //Engine e1 = new Engine(200, "Gasoline");

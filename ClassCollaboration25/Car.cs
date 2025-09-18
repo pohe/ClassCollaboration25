@@ -46,7 +46,8 @@ namespace ClassCollaboration25
             _modelName = modelName;
             _theEngine = new Engine(200, "Gasoline");
             _theNavigationSystem = new NavigationSystem("Google navi", "Atari", "GPR", 300);
-            _wheel = wheel; 
+            _wheel = wheel;
+            Co2FromProduction = 500;
 
         }
 
@@ -58,11 +59,18 @@ namespace ClassCollaboration25
 
         public void ChangeWheels(Wheel aWheel)
         {
+            _wheel = aWheel;
         }
 
         public double CalCo2Emission()
         {
-            return 0;
+            return _theEngine.Co2FromProduction + _theNavigationSystem.Co2FromProduction + _wheel.Co2FromProduction + this.Co2FromProduction;
+            
+        }
+
+        public override string ToString()
+        {
+            return $"Modelnavn {_modelName}  \n\tengine: { _theEngine } \n\tnavigationsystem {_theNavigationSystem.ToString()} \n\twheel {_wheel.ToString()}   ";
         }
 
     }
